@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400&display=swap');
+    </style>
+    <i class="fa-solid fa-heart-crack fa-shake" style="color: #047474;"></i>
+</head>
+<body>
+    <div class="out">
+        <div class="in1">
+            <p>
+                Wish You Happy Birthday <br><span class="man"></span>
+            </p>
+        </div>
+        <div class="in2">
+            <p class="infield"></p>
+        </div>
+        <div class="but">
+           
+            <button class="butt" onclick="trigger()">Click Me</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".man",{
+            strings:["Maaniiii...!"],
+            typeSpeed:100,
+            backSpeed:150,
+            loop:true
+        })
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script>
+        const contentDiv = document.querySelector('.in1');
+        function triggerPartyPoppers() {
+        party.confetti(contentDiv, {
+            count: party.variation.range(200, 200),
+        });
+        party.confetti(contentDiv, {
+            count: party.variation.range(100, 200),
+        });
+    }
+    triggerPartyPoppers();
+    </script>
+
+
+
+
+    <script>
+        let index = 0;
+        const trigger = ()=>{
+            const embedText = document.querySelector(".infield");
+            const message = "Hey Maanya , Many more happy returns of the day! I hope this day brings you happiness. There's something I want to say. I've realized that losing you has been a huge loss in my life. It's been very hard for me.I don't know why I acted strangely during those days, but I'm sorry for that. We could have talked and sorted things out, but none of us took that step.At first, I thought our situation could be fixed and reversible, and you would be okay. But later (after May 9th), I realized it's irreversible. I've come to understand that I've lost you permanently, and things are not in my hands but in yours. I'am suffering the same pain that you hv suffered in those days...it's very difficult to describe:( I wish you all the best. Take care, Maanya.This is all I can say to you finally:(. Happy birthday :)";
+            index = 0; 
+            embedText.textContent = ''; 
+
+            setInterval(function() {
+                if (index < message.length) {
+                    embedText.textContent += message[index];
+                    index++;
+                }
+                
+            }, 100); 
+        }
+    </script>
+</body>
+</html>
